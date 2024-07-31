@@ -1,0 +1,205 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #fff;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    position: relative;
+    background: url('header-bg.jpg') no-repeat center center/cover;
+    color: var(--secondary-color);
+    padding: 3em 0;
+    text-align: center;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .header-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1em;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0;
+    display: flex;
+    gap: 1em;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+section {
+    margin: 2em 0;
+    background: var(--secondary-color);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+section:hover {
+    background-color: #e2e2e2;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.projects-grid, .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+}
+
+.project, .skill {
+    background: var(--background-color);
+    padding: 1em;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.project:hover, .skill:hover {
+    transform: translateY(-10px);
+    background-color: #e2e2e2;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5em 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Circular Progress Bar */
+.progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary-color) calc(var(--percentage) * 1%), #e2e2e2 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+.progress-circle span {
+    font-size: 1.5em;
+    color: var(--text-color);
+    position: absolute;
+}
+
+.progress-circle::before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.p90 {
+    --percentage: 90;
+    animation: fill90 2s ease-out forwards;
+}
+
+.p80 {
+    --percentage: 80;
+    animation: fill80 2s ease-out forwards;
+}
+
+.p70 {
+    --percentage: 70;
+    animation: fill70 2s ease-out forwards;
+}
+
+@keyframes fill90 {
+    0% {
+        --percentage: 0;
+    }
+    100% {
+        --percentage: 90;
+    }
+}
+
+@keyframes fill80 {
+    0% {
+        --percentage: 0;
+    }
+    100% {
+        --percentage: 80;
+    }
+}
+
+@keyframes fill70 {
